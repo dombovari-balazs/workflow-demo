@@ -62,5 +62,5 @@ jobs:
     needs: [lint, test]
     steps:
       - name: Push to ECR
-      run: echo Hello push to ECR!
+        run: echo Hello push to ECR!
     
