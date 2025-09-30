@@ -5,11 +5,11 @@ on:
 
 env:
     GIT_HASH: $(git rev-parse --short "$GITHUB_SHA")
-    GIT_BRANCH: ${GITHUB_REF#refs/heads/}
 jobs:
-  build:
+  terraform_apply:
     runs-on: ubuntu-latest
-
+    if: contains('"main"]', github.ref_name)
+    
     steps:
       - uses: actions/checkout@v4
 
